@@ -14,11 +14,11 @@ export const Palette = () => {
     <Container disableGutters>
       <Stack direction="row" sx={{ marginBottom: '2rem' }}>
         <Stack direction="column">
-          <Typography variant="h6" sx={{ fontWeight: '500', color: '#eeea' }}>
+          <Typography variant="h6" sx={{ fontWeight: '500' }}>
             Generated palette
           </Typography>
           <Box sx={{ display: 'flex' }}>
-            <IconButton aria-label="decorative" disableRipple sx={{ color: 'white' }} edge='start'>
+            <IconButton aria-label="decorative" disableRipple sx={{ color: '#333' }} edge='start'>
               <StarIcon />
             </IconButton>
             <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
