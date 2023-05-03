@@ -38,9 +38,10 @@ export const Palette = () => {
                   height: '400px',
                   backgroundColor: 'green',
                   gridTemplateColumns: { md: '1fr 1fr' },
-                  transition: 'all ease 0.5s',
+                  transition: 'all ease 0.3s',
+                  boxShadow: '0px 16px 24px -8px green',
                   '&:hover': {
-                    backgroundColor: 'red'
+                    transform: 'scale(0.98)'
                   }
                 }}
               />
