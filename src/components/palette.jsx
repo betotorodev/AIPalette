@@ -1,5 +1,8 @@
 import {
   Box,
+  Card,
+  CardActions,
+  CardContent,
   Container,
   Grid,
   IconButton,
@@ -8,6 +11,7 @@ import {
   Typography
 } from '@mui/material'
 import StarIcon from '@mui/icons-material/Star'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 
 export const Palette = () => {
   return (
@@ -31,20 +35,33 @@ export const Palette = () => {
         {[1, 2, 3, 4, 5].map((item, index) => {
           return (
             <Grid item xs={1} key={index}>
-              <Paper
-                elevation={0}
+              <Card
                 sx={{
-                  width: 'auto',
-                  height: '400px',
-                  backgroundColor: 'green',
-                  gridTemplateColumns: { md: '1fr 1fr' },
-                  transition: 'all ease 0.3s',
                   boxShadow: '0px 16px 24px -8px green',
+                  transition: 'all ease 0.3s',
                   '&:hover': {
                     transform: 'scale(0.98)'
                   }
                 }}
-              />
+              >
+                <CardContent disableGutters>
+                  <Paper
+                    elevation={0}
+                    sx={{
+                      width: '100%',
+                      height: '400px',
+                      backgroundColor: 'green',
+                      gridTemplateColumns: { md: '1fr 1fr' }
+                    }}
+                  />
+                </CardContent>
+                <CardActions>
+                  <IconButton aria-label="add to favorites">
+                    <ContentCopyIcon />
+                  </IconButton>
+                  <Typography>#ffffff</Typography>
+                </CardActions>
+              </Card>
             </Grid>
           )
         })}
