@@ -36,10 +36,19 @@ export const Header = () => {
             aria-label="delete"
             disableRipple
             sx={{ color: '#3C424D' }}
+            href="https://twitter.com/betotorodev"
+            target="_blanck"
+            rel="noopener noreferrer"
           >
             <TwitterIcon />
           </IconButton>
-          <IconButton aria-label="delete" sx={{ color: '#3C424D' }}>
+          <IconButton
+            aria-label="delete"
+            sx={{ color: '#3C424D' }}
+            href="https://github.com/betotorodev"
+            target="_blanck"
+            rel="noopener noreferrer"
+          >
             <GithubrIcon />
           </IconButton>
         </Stack>
