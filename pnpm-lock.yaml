@@ -17,6 +17,7 @@ specifiers:
   react-dom: ^18.2.0
   standard: ^17.0.0
   vite: ^4.3.2
+  wc-toast: 1.2.9
 
 dependencies:
   '@emotion/react': 11.10.8_3mjolpizrsjgnt7s4ahgoveqvu
@@ -37,6 +38,7 @@ devDependencies:
   eslint-plugin-react-refresh: 0.3.5_eslint@8.39.0
   standard: 17.0.0
   vite: 4.3.4
+  wc-toast: 1.2.9
 
 packages:
 
@@ -2552,6 +2554,10 @@ packages:
       rollup: 3.21.3
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /wc-toast/1.2.9:
+    resolution: {integrity: sha512-cwYwKCLqezlNrMkXFEQg/4VzBuPBMn8nEDWvAOcw5AfutkoWCCa28li9tpcM9s/ITRL18lVsdeR6HzUQAqFVKA==}
     dev: true
 
   /which-boxed-primitive/1.0.2:
