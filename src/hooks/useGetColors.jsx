@@ -2,11 +2,10 @@ import { useContext } from 'react'
 import { PaletteContext } from '../paletteContext'
 import { toast } from 'wc-toast'
 
-// const API_KEY = process.env.PUBLIC_OPENAI_API_KEY
+const API_KEY = import.meta.env.VITE_OPENAI_API_KEY
 
 export function useGetColors() {
   const { palette, setPalette, error, setError, word, setWord } = useContext(PaletteContext)
-  // const [error, setError] = useState()
 
   const prompt = `Complete the following json object with a palette of 5 colors with this keyword reference ${word}. The response must be a valid JSON object. Each color is an object containing the hexadecimals of each color with "hex" as its key name, the names, the pantone names and the rgb: {palette: []}`
 
@@ -16,8 +15,7 @@ export function useGetColors() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // Authorization: `Bearer ${API_KEY}`
-          Authorization: 'Bearer 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'
+          Authorization: `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
           model: 'text-davinci-003',
