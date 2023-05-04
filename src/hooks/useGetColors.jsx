@@ -4,11 +4,11 @@ import { toast } from 'wc-toast'
 
 // const API_KEY = process.env.PUBLIC_OPENAI_API_KEY
 
-export function useGetColors(message = 'Sunset') {
-  const { palette, setPalette, error, setError } = useContext(PaletteContext)
+export function useGetColors() {
+  const { palette, setPalette, error, setError, word, setWord } = useContext(PaletteContext)
   // const [error, setError] = useState()
 
-  const prompt = `Complete the following json object with a palette of 5 colors with this keyword reference ${message}. The response must be a valid JSON object. Each color is an object containing the hexadecimals of each color with "hex" as its key name, the names, the pantone names and the rgb: {palette: []}`
+  const prompt = `Complete the following json object with a palette of 5 colors with this keyword reference ${word}. The response must be a valid JSON object. Each color is an object containing the hexadecimals of each color with "hex" as its key name, the names, the pantone names and the rgb: {palette: []}`
 
   async function getColors() {
     await toast.promise(
@@ -44,5 +44,10 @@ export function useGetColors(message = 'Sunset') {
     )
   }
 
-  return { palette, getColors, error }
+  function handleWord(e) {
+    const { value } = e.target
+    setWord(value)
+  }
+
+  return { palette, getColors, error, word, handleWord }
 }

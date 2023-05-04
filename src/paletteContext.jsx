@@ -6,6 +6,7 @@ export const PaletteContext = createContext()
 export function PaletteProvider({ children }) {
   const [palette, setPalette] = useState()
   const [error, setError] = useState()
+  const [word, setWord] = useState('sunset')
 
   return (
     <PaletteContext.Provider
@@ -13,7 +14,9 @@ export function PaletteProvider({ children }) {
         palette,
         setPalette,
         error,
-        setError
+        setError,
+        word,
+        setWord
       }}
     >
       {children}

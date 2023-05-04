@@ -23,7 +23,7 @@ const style = {
 }
 
 export const PaletteModal = () => {
-  const { palette, getColors } = useGetColors()
+  const { palette, getColors, handleWord } = useGetColors()
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
@@ -78,6 +78,7 @@ export const PaletteModal = () => {
             </Box>
             <Stack direction="column">
               <TextField
+                onChange={handleWord}
                 id="standard-basic"
                 variant="standard"
                 placeholder="Happy,ocean, etc. :)"
