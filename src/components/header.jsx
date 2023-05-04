@@ -31,26 +31,37 @@ export const Header = () => {
         >
           AIPalette
         </Typography>
-        <Stack direction="row" spacing={1}>
-          <IconButton
-            aria-label="delete"
-            disableRipple
-            sx={{ color: '#3C424D' }}
-            href="https://twitter.com/betotorodev"
-            target="_blanck"
-            rel="noopener noreferrer"
+        <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+          <Typography
+            variant="h6"
+            sx={{
+              opacity: 0.5,
+              fontSize: '14px'
+            }}
           >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            aria-label="delete"
-            sx={{ color: '#3C424D' }}
-            href="https://github.com/betotorodev"
-            target="_blanck"
-            rel="noopener noreferrer"
-          >
-            <GithubrIcon />
-          </IconButton>
+            By @betotorodev
+          </Typography>
+          <Stack direction="row">
+            <IconButton
+              aria-label="delete"
+              disableRipple
+              sx={{ color: '#3C424D' }}
+              href="https://twitter.com/betotorodev"
+              target="_blanck"
+              rel="noopener noreferrer"
+            >
+              <TwitterIcon />
+            </IconButton>
+            <IconButton
+              aria-label="delete"
+              sx={{ color: '#3C424D' }}
+              href="https://github.com/betotorodev"
+              target="_blanck"
+              rel="noopener noreferrer"
+            >
+              <GithubrIcon />
+            </IconButton>
+          </Stack>
         </Stack>
       </Container>
       <Divider />
