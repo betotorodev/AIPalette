@@ -14,9 +14,19 @@ import StarIcon from '@mui/icons-material/Star'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { useGetColors } from '../hooks/useGetColors'
 import { EmptyState } from './emptyState'
+import { toast } from 'wc-toast'
 
 export const Palette = () => {
   const { palette, colorTitle } = useGetColors()
+  function handleCopy(hex) {
+    navigator.clipboard.writeText(hex)
+    toast('Copied', {
+      duration: 2000,
+      icon: {
+        type: 'success'
+      }
+    })
+  }
   return (
     <Container disableGutters>
       {!palette && <EmptyState />}
@@ -68,7 +78,10 @@ export const Palette = () => {
                       />
                     </CardContent>
                     <CardActions>
-                      <IconButton aria-label="add to favorites">
+                      <IconButton
+                        onClick={() => handleCopy(item.hex)}
+                        aria-label="add to favorites"
+                      >
                         <ContentCopyIcon />
                       </IconButton>
                       <Typography>{item.hex}</Typography>
