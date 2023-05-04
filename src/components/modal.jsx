@@ -5,9 +5,11 @@ import Modal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
+import { Stack, TextField } from '@mui/material'
+
+import { useGetColors } from '../hooks/useGetColors'
 
 import PaletteIcon from '@mui/icons-material/Palette'
-import { Stack, TextField } from '@mui/material'
 
 const style = {
   position: 'absolute',
@@ -21,9 +23,13 @@ const style = {
 }
 
 export const PaletteModal = () => {
+  const { getColors } = useGetColors()
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
+  const handleGetColors = () => {
+    getColors()
+  }
 
   return (
     <>
@@ -66,16 +72,22 @@ export const PaletteModal = () => {
                 Enter a keyword of whatever and start creating
               </Typography>
             </Box>
-            <Stack direction='column'>
+            <Stack direction="column">
               <TextField
                 id="standard-basic"
                 variant="standard"
-                placeholder='Happy,ocean, etc. :)'
+                placeholder="Happy,ocean, etc. :)"
                 fullWidth
                 focused
                 sx={{ color: '#fff', marginBottom: '1rem' }}
               />
-              <Button sx={{ width: '100%' }} variant='contained'>Generate</Button>
+              <Button
+                onClick={handleGetColors}
+                sx={{ width: '100%' }}
+                variant="contained"
+              >
+                Generate
+              </Button>
             </Stack>
           </Box>
         </Fade>

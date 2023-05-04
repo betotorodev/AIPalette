@@ -1,0 +1,34 @@
+{
+  "palette": [
+    {
+      "hex": "#FDC11C",
+      "name": "Mustard",
+      "pantone": "117 C",
+      "rgb": "253,193,28"
+    },
+    {
+      "hex": "#D8E2FF",
+      "name": "Powder Blue",
+      "pantone": "7461 C",
+      "rgb": "216,226,255"
+    },
+    {
+      "hex": "#5B5F5F",
+      "name": "Silver",
+      "pantone": "Cool Gray 11 C",
+      "rgb": "91,95,95"
+    },
+    {
+      "hex": "#ED8F6A",
+      "name": "Tangerine",
+      "pantone": "1585 C",
+      "rgb": "237,143,106"
+    },
+    {
+      "hex": "#48C2B2",
+      "name": "Teal",
+      "pantone": "3135 C",
+      "rgb": "72,194,178"
+    }
+  ]
+}
