@@ -56,7 +56,7 @@ export const Palette = () => {
                       }
                     }}
                   >
-                    <CardContent disableGutters>
+                    <CardContent>
                       <Paper
                         elevation={0}
                         sx={{
