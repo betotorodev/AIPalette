@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Backdrop from '@mui/material/Backdrop'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
@@ -23,13 +23,17 @@ const style = {
 }
 
 export const PaletteModal = () => {
-  const { getColors } = useGetColors()
+  const { palette, getColors } = useGetColors()
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const handleGetColors = () => {
     getColors()
   }
+
+  useEffect(() => {
+    if (palette) handleClose()
+  }, [palette])
 
   return (
     <>
