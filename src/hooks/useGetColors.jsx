@@ -5,7 +5,16 @@ import { toast } from 'wc-toast'
 const API_KEY = import.meta.env.VITE_OPENAI_API_KEY
 
 export function useGetColors() {
-  const { palette, setPalette, error, setError, word, setWord } = useContext(PaletteContext)
+  const {
+    palette,
+    setPalette,
+    error,
+    setError,
+    word,
+    setWord,
+    colorTitle,
+    setColorTitle
+  } = useContext(PaletteContext)
 
   const prompt = `Complete the following json object with a palette of 5 colors with this keyword reference ${word}. The response must be a valid JSON object. Each color is an object containing the hexadecimals of each color with "hex" as its key name, the names, the pantone names and the rgb: {palette: []}`
 
@@ -31,6 +40,8 @@ export function useGetColors() {
         .then((info) => {
           const data = JSON.parse(info.choices[0].text)
           setPalette(data)
+          setColorTitle(word)
+          setWord('')
         })
         // eslint-disable-next-line n/handle-callback-err
         .catch((err) => setError('something went wrong with the search')),
@@ -47,5 +58,5 @@ export function useGetColors() {
     setWord(value)
   }
 
-  return { palette, getColors, error, word, handleWord }
+  return { palette, getColors, error, word, handleWord, colorTitle }
 }

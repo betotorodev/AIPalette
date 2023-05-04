@@ -16,7 +16,7 @@ import { useGetColors } from '../hooks/useGetColors'
 import { EmptyState } from './emptyState'
 
 export const Palette = () => {
-  const { palette, word } = useGetColors()
+  const { palette, colorTitle } = useGetColors()
   return (
     <Container disableGutters>
       {!palette && <EmptyState />}
@@ -37,7 +37,7 @@ export const Palette = () => {
                   <StarIcon />
                 </IconButton>
                 <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
-                  {word}
+                  {colorTitle}
                 </Typography>
               </Box>
             </Stack>

@@ -23,11 +23,17 @@ const style = {
 }
 
 export const PaletteModal = () => {
-  const { palette, getColors, handleWord } = useGetColors()
+  const { palette, getColors, handleWord, word } = useGetColors()
   const [open, setOpen] = useState(false)
+  const [isEmpty, setIsEmpty] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const handleGetColors = () => {
+    if (!word) {
+      setIsEmpty(true)
+      return
+    }
+    setIsEmpty(false)
     getColors()
   }
 
@@ -78,10 +84,12 @@ export const PaletteModal = () => {
             </Box>
             <Stack direction="column">
               <TextField
+                error={isEmpty}
                 onChange={handleWord}
-                id="standard-basic"
+                id="generate-palette"
                 variant="standard"
                 placeholder="Happy,ocean, etc. :)"
+                helperText={`${isEmpty ? "It can't be empty" : ''}`}
                 fullWidth
                 focused
                 sx={{ color: '#fff', marginBottom: '1rem' }}
